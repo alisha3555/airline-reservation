@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <!-- <link rel="stylesheet" href="/css/style2.css"> -->
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background: url(header-bg.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 8px;
+   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #565953;
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0b21c5;
+}
+
+
+#confirmationMessage {
+    margin-top: 20px;
+    font-weight: bold;
+    color: rgb(15, 51, 158);
+}
+</style>
+<body>
+
+    <div class="container">
+        <h2>WELCOME TO SKYWINGS</h2>
+        <form id="bookingForm">
+            
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+            <label for="departure">Departure:</label>
+            <select id="departure" required>
+                <option value="">Select Departure City</option>
+                <option value="New York">New York</option>
+                <option value="London">London</option>
+                <option value="Paris">Paris</option>
+                <option value="Tokyo">Tokyo</option>
+            </select>
+
+            <label for="destination">Destination:</label>
+            <select id="destination" required>
+                <option value="">Select Destination</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Sydney">Sydney</option>
+                <option value="Toronto">Toronto</option>
+            </select>
+
+            <label for="date">Departure Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" required>
+
+            <label for="seats">Seats:</label>
+            <input type="number" id="seats" min="1" max="10" value="1" required>
+
+            <button type="submit">Book Now</button>
+            <button type="back" onclick="document.location='http://127.0.0.1:5500/src/main/resources/templates/booking.html'">Back to home page</button>
+        </form>
+        
+        <div id="confirmationMessage"></div>
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>

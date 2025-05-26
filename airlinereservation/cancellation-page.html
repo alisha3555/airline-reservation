@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cancellation Page</title>
+  <link rel="stylesheet" href="cancellation.css" />
+</head>
+</style>
+<script>
+    document.getElementById("cancelForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  
+  const email = document.getElementById("email").value;
+  const reason = document.getElementById("reason").value;
+
+  if (email && reason) {
+    // Simulate successful cancellation
+    document.getElementById("modal").classList.remove("hidden");
+    document.getElementById("cancelForm").reset();
+  }
+});
+
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
+
+</script>
+<body style="background-color: aquamarine;">
+  <div class="container">
+    <h1>Cancel Your Ticket</h1>
+    <form id="cancelForm">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required />
+
+      <label for="reason">Reason for Cancellation</label>
+      <textarea id="reason" rows="4" required></textarea>
+
+      <button type="submit">Cancel Ticket</button>
+    </form>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Cancellation Confirmed</h2>
+      <p>Your subscription has been cancelled. We're sorry to see you go!</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="cancellation.js"></script>
+</body>
+</html>
